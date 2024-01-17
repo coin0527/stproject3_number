@@ -9,3 +9,5 @@
 Header, Footer 미완성
 M버전 미구현
 기능 구현 완료
+css 미분리
+배포
