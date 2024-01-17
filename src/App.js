@@ -48,12 +48,28 @@ const Range = styled.div`
   margin-bottom: 30px;
 `;
 
+const Form = styled.form`
+  display: flex;
+  h3 {
+    margin-right: 15px;
+  }
+  h4 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+`;
+const Input = styled.input`
+  width: 75px;
+  text-align: center;
+`;
+
 export const App = () => {
   const [randomNum, setRandomNum] = useState(null);
 
   const RandomNumber = () => {
     const randomValue = Math.floor(Math.random() * 100) + 1;
     setRandomNum(randomValue);
+    // math.floor은 소숫점 이하를 버린다.
   };
   return (
     <Wrap>
@@ -62,8 +78,12 @@ export const App = () => {
         <Title> Select your Number </Title>
         <Circle>{randomNum}</Circle>
         <Range>
-          <h3>범위</h3>
-          {/* 인풋 2개 */}
+          <Form>
+            <h3>범위</h3>
+            <Input type="number"></Input>
+            <h4> ~ </h4>
+            <Input type="number"></Input>
+          </Form>
         </Range>
         <Button onClick={RandomNumber}>생성하기</Button>
       </Container>
